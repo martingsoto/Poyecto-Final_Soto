@@ -20,8 +20,9 @@ class genero(models.Model):
 
 class posteo(models.Model):
     autor = usuario
+    gen = genero
     fecha = models.DateField(null=False, blank=False)
-    titulo = models.CharField()
+    titulo = models.CharField(max_length=126)
     content = models.TextField(blank=False)
 
 
