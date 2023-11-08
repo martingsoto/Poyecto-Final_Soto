@@ -5,5 +5,5 @@ from control_post.views import lista_usuarios
 
 urlpatterns = [
 
-    path("usuarios/", lista_usuarios), 
+    path("usuarios/", lista_usuarios, name="lista_usuarios"), 
 ]
