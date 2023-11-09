@@ -16,12 +16,21 @@
     <form action="{% url 'buscar_usuarios' %}" method="post">
         {% csrf_token %}
         <input type="text" name="busqueda">
-        <input type="submit" value="Buscar genero">
+        <input type="submit" value="Buscar usuario por nombre">
     </form>
     <br>
 
     <table class="table">
+
+        <tr>
+            <th>NOMBRE</th>
+            <th>APELLIDO</th>
+            <th>DNI</th>
+        </tr>
+
+
         {% for users in usuarios  %} 
+       
         <tr>
             <td>{{users.nombre }}</td>
             <td>{{users.apellido }}</td>
