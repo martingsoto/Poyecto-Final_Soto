@@ -3,7 +3,7 @@
 
     
     {% block titulo %}
-    <title>Usuarios</title>
+    <title>Generos</title>
     {% endblock titulo %}
 
 
@@ -11,11 +11,11 @@
 
 
     <table class="table">
-        {% for users in usuarios  %} 
+        {% for gen in generos  %} 
         <tr>
-            <td>{{users.nombre }}</td>
-            <td>{{users.apellido }}</td>
-            <td>{{users.dni }}</td>
+            <td>{{gen.nombre }}</td>
+            <td>{{gen.cantidad }}</td>
+            
         </tr>
 
 
