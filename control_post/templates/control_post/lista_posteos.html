@@ -1,0 +1,40 @@
+{% extends "main.html" %}
+
+
+    
+    {% block titulo %}
+    <title>Posteos</title>
+    {% endblock titulo %}
+
+
+    {% block contenido %}
+    <h1>POSTS</h1>
+
+    <a href="{% url 'lista_posteos' %}" >Ver todos los post</a>
+    <a href="{% url 'lista_generos' %}" >Ver Generos</a>
+    <a href="{% url 'crear_posteo' %}" >Crear Post</a>
+<br><br>
+    <form action="{% url 'buscar_posteo' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="busqueda">
+        <input type="submit" value="Buscar posteo">
+    </form>
+    <br>
+    <table class="table">
+        {% for post in posteos  %} 
+        <tr>
+            <td>{{post.autor }}</td>
+            <td>{{post.gen }}</td>
+            <td>{{post.fecha }}</td>
+            <td>{{post.titulo }}</td>
+            <td>{{post.content }}</td>
+        </tr>
+
+
+
+    {% endfor %}
+    </table>
+    
+    
+    {% endblock contenido %}
+   

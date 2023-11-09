@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class usuario(models.Model):
-    usuario = models.CharField(max_length=64)
+    logname = models.CharField(max_length=64)
     contra = models.CharField(max_length=12)
     nombre = models.CharField(max_length=64)
     apellido = models.CharField(max_length=64)
@@ -18,9 +18,9 @@ class genero(models.Model):
     cantidad = models.IntegerField()
 
 
-class posteo(models.Model):
-    autor = usuario
-    gen = genero
+class blogpost(models.Model):
+    autor = models.CharField(max_length=64)
+    gen = models.CharField(max_length=64)
     fecha = models.DateField(null=False, blank=False)
     titulo = models.CharField(max_length=126)
     content = models.TextField(blank=False)
