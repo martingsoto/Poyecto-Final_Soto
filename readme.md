@@ -35,8 +35,6 @@ contraseña:123456
 
 # Uso para Prueba
 
-en terminal ingresar "python manage.py runserver"
-
 posible la creacion, vista y busqueda de usuarios 
 
 posible la creacion, vista y busqueda de generos de blog
