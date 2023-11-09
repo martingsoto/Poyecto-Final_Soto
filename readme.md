@@ -11,6 +11,14 @@
 pip install -r requirements.txt
 ```
 
+# inicio de la app
+en terminal ingresar 
+
+```
+python manage.py runserver
+
+```
+
 ## Instrucciones para entrar al panel aministrativo de Django
 + En consola, crear un superuser:
 ```
@@ -26,6 +34,8 @@ username:admin
 contraseña:123456
 
 # Uso para Prueba
+
+en terminal ingresar "python manage.py runserver"
 
 posible la creacion, vista y busqueda de usuarios 
 
