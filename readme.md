@@ -33,10 +33,5 @@ python manage.py createsuperuser
 username:admin
 contraseña:123456
 
-# Uso para Prueba
 
-posible la creacion, vista y busqueda de usuarios 
 
-posible la creacion, vista y busqueda de generos de blog
-
-posible la creacion, vista y busqueda de posteos

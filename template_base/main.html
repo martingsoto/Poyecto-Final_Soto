@@ -24,17 +24,44 @@
     <nav class="navbar navbar-light bg-light static-top">
         <div class="container">
             <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
-            <a class="navbar-brand" href="{% url 'lista_usuarios' %}">Usuarios</a>
+          
             <a class="navbar-brand" href="{% url 'lista_posteos' %}">Posteos</a>
+            {%  if user.is_authenticated  %}
+
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div style="display: inline-flex">
+                    <span>{{ user.username }}</span>
+                    </div>
+                  
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'ver_perfil' user.id  %}">Mi Perfil</a></li>
+                  
+                  <li><a class="dropdown-item" href="{% url 'logout'  %}">Cerrar Sesion</a></li>
+                </ul>
+            </div>
+            
+            {%  else %}
+            <a class="btn btn-primary" href="{% url 'login'  %}">Iniciar Sesion</a>
+            <a class="btn btn-success" href="{% url 'registro'  %}">Registrase</a>
+            {%endif%}
            
-            <a class="btn btn-primary" href="#signup">Login</a>
         </div>
     </nav>
 
     <section style="padding:4rem 3rem;">
         {% block contenido %}
 
-    <h1>BIENVENIDO AL INICIO DEL PROYECTO BLOG</h1>
+        {%  if user.is_authenticated  %}
+
+    <h1>Bienvenido/a al blog {{ user.first_name}} {{ user.last_name}} </h1>
+
+    {%  else %}
+
+    <h1>Bienvenido/a al blog visitante</h1>
+
+    {%endif%}
         {% endblock contenido %}
     </section>
 
@@ -44,9 +71,8 @@
             <div class="row">
                 <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
                     <ul class="list-inline mb-2">
-                        <li class="list-inline-item"><a href="#!">Ayuda</a></li>
-                        <li class="list-inline-item">⋅</li>
-                        <li class="list-inline-item"><a href="#!">Contacto</a></li>
+                        
+                        <li class="list-inline-item"><a href="{% url 'about' %}">Acerca de mi</a></li>
                   
                     </ul>
                     <p class="text-muted small mb-4 mb-lg-0">&copy; Proyecto Blog - Martin Soto</p>
