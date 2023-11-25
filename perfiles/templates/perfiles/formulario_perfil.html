@@ -1,0 +1,29 @@
+{% extends "main.html" %}
+
+
+    
+    {% block titulo %}
+    <title> Usuario </title>
+    {% endblock titulo %}
+
+
+    {% block contenido %}
+    <h1> Usuario {{ object.username }}</h1>
+    <h3>Editar datos: </h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+
+        <input class="btn btn-success" type="submit" value="Guardar" />
+
+
+    </form>
+    
+
+
+
+
+ 
+    
+    
+    {% endblock contenido %}

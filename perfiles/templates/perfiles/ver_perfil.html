@@ -1,0 +1,25 @@
+{% extends "main.html" %}
+
+
+    
+    {% block titulo %}
+    <title>Mi Perfil</title>
+    {% endblock titulo %}
+
+
+    {% block contenido %}
+
+    <h1> Mis Datos </h1>
+
+    <p> Usuario : {{ perfil.username }}</p>
+    <p> Nombre : {{ perfil.first_name }}</p>
+    <p> Apellido : {{ perfil.last_name }}</p>
+    <p> Email : {{ perfil.email }}</p>
+    <br>
+    <a href="{% url 'editar_perfil'  %}">Editar mis datos</a>
+
+
+
+    
+    {% endblock contenido %}
+   

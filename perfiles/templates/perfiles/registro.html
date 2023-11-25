@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+
+
+    
+    {% block titulo %}
+    <title> Crear Usuarios</title>
+    {% endblock titulo %}
+
+
+    {% block contenido %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+
+        <input class="btn btn-success" type="submit" value="Registrarse" />
+
+
+    </form>
+    
+
+
+
+
+ 
+    
+    
+    {% endblock contenido %}
+   
