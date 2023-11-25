@@ -12,7 +12,7 @@ pip install -r requirements.txt
 ```
 
 # inicio de la app
-en terminal ingresar 
+en terminal ingresar (dentro de la carpeta madre blog_cosas)
 
 ```
 python manage.py runserver
